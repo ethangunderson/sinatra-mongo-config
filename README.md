@@ -27,16 +27,16 @@ Example
 ------
 
     configure do
-		  set :mongo_db, 'ethangunderson'
-		end
+        set :mongo_db, 'ethangunderson'
+    end
 
-		configure :production do
-		  set :mongo_host, 'flame.local.mongohq.com'
-		  set :mongo_user, 'foo'
-		  set :mongo_password, 'bar'
-		end
-		
-		get '/blog' do
-			@posts = database['posts'].find()
-			haml :blog
-		end
+    configure :production do
+        set :mongo_host, 'flame.local.mongohq.com'
+        set :mongo_user, 'foo'
+        set :mongo_password, 'bar'
+    end
+
+    get '/blog' do
+        @posts = database['posts'].find()
+        haml :blog
+    end
